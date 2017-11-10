@@ -3,7 +3,7 @@
 //HW#28 --Ye olde Role Playing Game'
 //2017-11-8
 
-public class Monster {
+public class Monster extends Character{
 
     //Attributes
     private static String name;
