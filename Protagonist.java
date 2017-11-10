@@ -3,7 +3,7 @@
 //HW#28 -- Ye Olde Role Playing Game
 //2017-11-8
 
-public class Protagonist {
+public class Protagonist extends Character{
 
     //Attributes
     public static String name;
