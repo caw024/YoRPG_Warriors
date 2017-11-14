@@ -6,11 +6,11 @@
 public class Warrior extends Protagonist {
 
     //Attributes
-    protected String name;
-    protected int life;
-    protected int strength;
-    protected int defense;
-    protected double aRate;
+    public String name;
+    public int life;
+    public int strength;
+    public int defense;
+    public double aRate;
 
     //Constructor
     public Warrior(String newname) {
