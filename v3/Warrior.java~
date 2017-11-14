@@ -6,20 +6,20 @@
 public class Warrior extends Protagonist {
 
     //Attributes
-    protected String name;
+    protected static String name;
     protected static int life;
     protected static int strength;
     protected static int defense;
     protected static double aRate;
 
     //Constructor
-    // public Warrior(String newname) {
-    // 	name = newname;
-    // 	life = 100;
-    // 	strength = 20;
-    // 	defense = 5;
-    // 	aRate = 2.5;
-    // }
+    public Protagonist(String newname) {
+	name = newname;
+	life = 100;
+	strength = 20;
+	defense = 5;
+	aRate = 2.5;
+    }
 
     //returns boolean indicating living/dead
     public static boolean isAlive() {
