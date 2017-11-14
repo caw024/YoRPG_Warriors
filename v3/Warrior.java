@@ -6,40 +6,40 @@
 public class Warrior extends Protagonist {
 
     //Attributes
-    protected static String name;
-    protected static int life;
-    protected static int strength;
-    protected static int defense;
-    protected static double aRate;
+    protected String name;
+    protected int life;
+    protected int strength;
+    protected int defense;
+    protected double aRate;
 
     //Constructor
-    // public Warrior(String newname) {
-    // 	name = newname;
-    // 	life = 100;
-    // 	strength = 20;
-    // 	defense = 5;
-    // 	aRate = 2.5;
-    // }
+    public Warrior(String newname) {
+	name = newname;
+	life = 100;
+	strength = 20;
+	defense = 5;
+	aRate = 2.5;
+    }
 
     //returns boolean indicating living/dead
-    public static boolean isAlive() {
+    public boolean isAlive() {
 	if (life <= 0)
 	    return false;
 	return true;
     }
 
     //returns value of defense attribute
-    public static int getDefense() {
+    public int getDefense() {
 	return defense;
     }
 
     //returns value of name attribute
-    public static String getName() {
+    public String getName() {
 	return name;
     }
 
     //descreases life by parameter
-    public static int lowerHP(int n) {
+    public int lowerHP(int n) {
 	life -= n;
 	if (life <= 0)
 	    return 0;
@@ -48,8 +48,7 @@ public class Warrior extends Protagonist {
 
     //calculates attack
     //how to access mDefense (Monster defense)
-    public static int attack(Monster grr) {
-	 
+    public int attack(Monster grr) {
 	int damage = (int) (strength * aRate) - grr.getDefense();
 	if (damage <= 0)
 	    return 0;
@@ -58,7 +57,7 @@ public class Warrior extends Protagonist {
     }
 
     //prepares Protagonist for special attack
-    public static void specialize() {
+    public void specialize() {
 	aRate += 2.5;
 	if (defense <= 0)
 	    defense = 0;
@@ -67,7 +66,7 @@ public class Warrior extends Protagonist {
     }
 
     //prepares Protagonist for normal attack
-    public static void normalize() {
+    public void normalize() {
 	aRate = 2.5;
 	defense = 5;
     }
