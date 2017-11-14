@@ -7,10 +7,14 @@ public class Protagonist extends Character{
 
     //Attributes
     protected String name;
-    protected int life;
-    protected int strength;
-    protected int defense;
-    protected double aRate;
+   
+    public Protagonist() {
+	name = null;
+	life = 100;
+	strength = 5;
+	defense = 5;
+	aRate = 2.5;
+    }
 
     //Constructor
     public Protagonist(String newname) {
@@ -21,35 +25,22 @@ public class Protagonist extends Character{
 	aRate = 2.5;
     }
 
-    //returns boolean indicating living/dead
-    public boolean isAlive() {
-	if (life <= 0)
-	    return false;
-	return true;
-    }
-
-    //returns value of defense attribute
-    public int getDefense() {
-	return defense;
-    }
-
     //returns value of name attribute
     public String getName() {
 	return name;
     }
 
     //descreases life by parameter
-    public int lowerHP(int n) {
-	life -= n;
-	if (life <= 0)
-	    return 0;
-	return life;
-    }
+     public int lowerHP(int n) {
+     	life -= n;
+     	if (life <= 0)
+     	    return 0;
+     	return life;
+     }
 
     //calculates attack
     //how to access mDefense (Monster defense)
     public int attack(Monster grr) {
-	 
 	int damage = (int) (strength * aRate) - grr.getDefense();
 	if (damage <= 0)
 	    return 0;
@@ -71,4 +62,5 @@ public class Protagonist extends Character{
 	aRate = 2.5;
 	defense = 5;
     }
+
 }

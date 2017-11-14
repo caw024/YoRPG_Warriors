@@ -84,10 +84,9 @@ public class YoRPG
     }
     catch ( IOException e ) { }
 
-  
-       pat = new Warrior(name);
-
- 
+    if (i == 1)
+	 pat = new Warrior(name);
+    
 
   }//end newGame()
 
@@ -111,7 +110,7 @@ public class YoRPG
 	    if ( (int) (Math.random() * 3) < 3){
 		smaug = new Zombie();
 	    }
-	    while( ((Zombie)smaug).isAlive() && ((Warrior) pat).isAlive() ) {
+	    while( smaug.isAlive() && pat.isAlive() ) {
 
         // Give user the option of using a special attack:
         // If you land a hit, you incur greater damage,
@@ -124,22 +123,22 @@ public class YoRPG
         catch ( IOException e ) { }
 
         if ( i == 2 )
-	    ((Warrior) pat).specialize();
+	    pat.specialize();
         else
-	    ((Warrior) pat).normalize();
+	    pat.normalize();
 
-	   d1 = ((Warrior) pat).attack( smaug );
+	   d1 = pat.attack( smaug );
         d2 = smaug.attack( pat );
 
-        System.out.println( "\n" + ((Warrior) pat).getName() + " dealt " + d1 +
+        System.out.println( "\n" + pat.getName() + " dealt " + d1 +
                             " points of damage.");
 
-        System.out.println( "\n" + smaug.getName() + " smacked " + ((Warrior) pat).getName() +
+        System.out.println( "\n" + smaug.getName() + " smacked " + pat.getName() +
                             " for " + d2 + " points of damage.");
 	    }//end while
 
 	    //option 1: you & the monster perish
-	    if ( !smaug.isAlive() && !((Warrior) pat).isAlive() ) {
+	    if ( !smaug.isAlive() && !pat.isAlive() ) {
         System.out.println( "'Twas an epic battle, to be sure... " + 
                             "You cut ye olde monster down, but " +
                             "with its dying breath ye olde monster. " +
@@ -152,7 +151,7 @@ public class YoRPG
         return true;
 	    }
 	    //option 3: the beast slays you
-	    else if ( !((Warrior) pat).isAlive() ) {
+	    else if ( !pat.isAlive() ) {
         System.out.println( "Ye olde self hath expired. You got dead." );
         return false;
 	    }
