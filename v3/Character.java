@@ -1,25 +1,25 @@
 public class Character {
     
-    protected static int life;
-    protected static int strength;
-    protected static int defense;
-    protected static double aRate;
+    protected int life;
+    protected int strength;
+    protected int defense;
+    protected double aRate;
 
-    public static boolean isAlive() {
+    public boolean isAlive() {
 	if (life > 0)
 	    return true;
 	return false;
     }
 
-    public static int getDefense() {
+    public int getDefense() {
 	return defense;
     }
 
-    public static int lowerHP(int n) {
+    public int lowerHP(int n) {
 	return life -= n;
     }
 
-    public static int attack(Character n) {
+    public int attack(Character n) {
 	int damage = (int) (strength * aRate) - n.getDefense();
 	return damage;
     }  
