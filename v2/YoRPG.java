@@ -2,8 +2,9 @@
  * class YoRPG -- Driver file for Ye Olde Role Playing Game.
  * Simulates monster encounters of a wandering adventurer.
  * Required classes: Protagonist, Monster
+ * ---
+ * Clyde "Thluffy" Sinclair
  **********************************************/
-
 
 import java.io.*;
 import java.util.*;
@@ -17,7 +18,7 @@ public class YoRPG
 
   //each round, a Protagonist and a Monster will be instantiated...
   private Protagonist pat;   //Is it man or woman?
-  private Monster smaug; //Friendly generic monster name?
+  private Monster smaug;     //Friendly generic monster name?
 
   private int moveCount;
   private boolean gameOver;
@@ -155,23 +156,21 @@ public class YoRPG
     //As usual, move the begin-comment bar down as you progressively 
     //test each new bit of functionality...
 
-    
     //loading...
-      YoRPG game = new YoRPG();
-  
-      int encounters = 0;
-    
-      while( encounters < MAX_ENCOUNTERS ) {
-	  if ( !game.playTurn() )
-	      break;
-	  encounters++;
-	  System.out.println();
-      }
+    YoRPG game = new YoRPG();
 
-      System.out.println( "Thy game doth be over." );
-	 
+    int encounters = 0;
+
+    while( encounters < MAX_ENCOUNTERS ) {
+      if ( !game.playTurn() )
+        break;
+      encounters++;
+      System.out.println();
+    }
+
+    System.out.println( "Thy game doth be over." );
+    /*================================================
+      ================================================*/
   }//end main
 
 }//end class YoRPG
-
-

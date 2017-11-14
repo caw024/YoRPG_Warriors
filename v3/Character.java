@@ -1,9 +1,9 @@
 public class Character {
     
-    public static int life;
-    public static int strength;
-    public static int defense;
-    public static double aRate;
+    protected static int life;
+    protected static int strength;
+    protected static int defense;
+    protected static double aRate;
 
     public static boolean isAlive() {
 	if (life > 0)
@@ -19,7 +19,7 @@ public class Character {
 	return life -= n;
     }
 
-    public static int attack(Character n) java{
+    public static int attack(Character n) {
 	int damage = (int) (strength * aRate) - n.getDefense();
 	return damage;
     }  

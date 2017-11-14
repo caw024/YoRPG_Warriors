@@ -1,75 +1,81 @@
-//Warriors
-//APSC1 pd8
-//HW#28 -- Ye Olde Role Playing Game
-//2017-11-8
+/**********************************************
+ * class Protagonist -- the protagonist of Ye Olde RPG
+ * ---
+ * Clyde "Thluffy" Sinclair
+ **********************************************/
 
-public class Protagonist extends Character{
+public class Protagonist extends Character
+{
+  // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
+  private String _name = "J. Doe";
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    //Attributes
-    public static String name;
-    public static int life;
-    public static int strength;
-    public static int defense;
-    public static double aRate;
 
-    //Constructor
-    public Protagonist(String newname) {
-	name = newname;
-	life = 100;
-	strength = 5;
-	defense = 5;
-	aRate = 2.5;
-    }
+  /*=============================================
+    default constructor
+    pre:  instance vars are declared
+    post: initializes instance vars.
+    =============================================*/
+  public Protagonist()
+  {
+    _hitPts = 125;
+    _strength = 100;
+    _defense = 40;
+    _attack = .4;
+  }
 
-    //returns boolean indicating living/dead
-    public static boolean isAlive() {
-	if (life <= 0)
-	    return false;
-	return true;
-    }
 
-    //returns value of defense attribute
-    public static int getDefense() {
-	return defense;
-    }
+  /*=============================================
+    overloaded constructor
+    pre:  instance vars are declared
+    post: initializes instance vars. _name is set to input String.
+    =============================================*/
+  public Protagonist( String name ) {
+    this();
+    _name = name;
+  }
 
-    //returns value of name attribute
-    public static String getName() {
-	return name;
-    }
 
-    //descreases life by parameter
-    public static int lowerHP(int n) {
-	life -= n;
-	if (life <= 0)
-	    return 0;
-	return life;
-    }
+  // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
+  public String getName() { return _name; }
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    //calculates attack
-    //how to access mDefense (Monster defense)
-    public static int attack(Monster grr) {
-	 
-	int damage = (int) (strength * aRate) - grr.getDefense();
-	if (damage <= 0)
-	    return 0;
-	grr.lowerHP(damage);
-     	return damage;
-    }
 
-    //prepares Protagonist for special attack
-    public static void specialize() {
-	aRate += 2.5;
-	if (defense <= 0)
-	    defense = 0;
-	else
-	    defense -= 1;
-    }
+  /*=============================================
+    int attack(Monster) -- simulates attack on instance of class Monster
+    pre:  Input not null
+    post: Calculates damage to be inflicted, flooring at 0. 
+    Calls opponent's lowerHP() method to inflict damage. 
+    Returns damage dealt.
+    =============================================*/
+  public int attack( Monster opponent )
+  {
 
-    //prepares Protagonist for normal attack
-    public static void normalize() {
-	aRate = 2.5;
-	defense = 5;
-    }
+    int damage = (int)( (_strength * _attack) - opponent.getDefense() );
+    //System.out.println( "\t\t**DIAG** damage: " + damage );
 
-}
+    if ( damage < 0 )
+	    damage = 0;
+
+    opponent.lowerHP( damage );
+
+    return damage;
+  }//end attack
+
+
+  //prepare a Protagonist for a special attack
+  public void specialize()
+  {
+    _attack = .75;
+    _defense = 20;
+  }
+
+
+  //revert to normal mode
+  public void normalize()
+  {
+    _attack = .4;
+    _defense = 40;
+  }
+
+}//end class Protagonist
