@@ -6,46 +6,46 @@
 public class Monster extends Character{
 
     //Attributes
-    private static String name;
-    private static int life;
-    private static int strength;
-    private static int defense;
-    private static double aRate;
+    protected String name;
+    protected int life;
+    protected int strength;
+    protected int defense;
+    protected double aRate;
 
 
     //Constructor
     public Monster() {
-	name = "Ghost";
+	name = "Monster";
 	life = 150;
-	strength = (int) (Math.random() * 46) + 20 ;
+	strength = (int) (Math.random() * 30) + 20 ;
 	defense = 20;
 	aRate = 1;
     }
 
     //returns boolean indicating living/dead
-    public static boolean isAlive() {
-	if (life == 0)
+    public boolean isAlive() {
+	if (life <= 0)
 	    return false;
 	return true;
     }
 
     //returns defense attribute
-    public static int getDefense() {
+    public int getDefense() {
 	return defense;
     }
 
     //returns name attribute
-    public static String getName() {
+    public String getName() {
 	return name;
     }
 
     //decreases life by parameter
-    public static int lowerHP(int n) {
+    public int lowerHP(int n) {
 	return life -= n;
     }
 
     //calculates attack
-    public static int attack(Protagonist prot) {
+    public int attack(Protagonist prot) {
     	int damage; 
     	if (aRate < 0) 
     		damage = 0;

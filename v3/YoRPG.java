@@ -52,6 +52,7 @@ public class YoRPG
   {
     String s;
     String name = "";
+    int i = 1;
     s = "~~~ Welcome to Ye Olde RPG! ~~~\n";
 
     s += "\nChoose your difficulty: \n";
@@ -66,16 +67,27 @@ public class YoRPG
     }
     catch ( IOException e ) { }
 
+
     s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
 
     try {
-	    name = in.readLine();
+	name = in.readLine();
+    }
+    catch ( IOException e ) { }
+    //instantiate the player's character
+    
+    try {
+	System.out.println( "\nWhat are you?" );
+	System.out.println( "\t1: Warrior" );
+	i = Integer.parseInt( in.readLine() );
     }
     catch ( IOException e ) { }
 
-    //instantiate the player's character
-    pat = new Protagonist( name );
+  
+       pat = new Warrior(name);
+
+ 
 
   }//end newGame()
 
@@ -96,9 +108,10 @@ public class YoRPG
     else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
 
-	    smaug = new Monster();
-
-	    while( smaug.isAlive() && pat.isAlive() ) {
+	    if ( (int) (Math.random() * 3) < 3){
+		smaug = new Zombie();
+	    }
+	    while( ((Zombie)smaug).isAlive() && ((Warrior) pat).isAlive() ) {
 
         // Give user the option of using a special attack:
         // If you land a hit, you incur greater damage,
@@ -111,22 +124,22 @@ public class YoRPG
         catch ( IOException e ) { }
 
         if ( i == 2 )
-          pat.specialize();
+	    ((Warrior) pat).specialize();
         else
-          pat.normalize();
+	    ((Warrior) pat).normalize();
 
-        d1 = pat.attack( smaug );
+	   d1 = ((Warrior) pat).attack( smaug );
         d2 = smaug.attack( pat );
 
-        System.out.println( "\n" + pat.getName() + " dealt " + d1 +
+        System.out.println( "\n" + ((Warrior) pat).getName() + " dealt " + d1 +
                             " points of damage.");
 
-        System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+        System.out.println( "\n" + smaug.getName() + " smacked " + ((Warrior) pat).getName() +
                             " for " + d2 + " points of damage.");
 	    }//end while
 
 	    //option 1: you & the monster perish
-	    if ( !smaug.isAlive() && !pat.isAlive() ) {
+	    if ( !smaug.isAlive() && !((Warrior) pat).isAlive() ) {
         System.out.println( "'Twas an epic battle, to be sure... " + 
                             "You cut ye olde monster down, but " +
                             "with its dying breath ye olde monster. " +
@@ -139,7 +152,7 @@ public class YoRPG
         return true;
 	    }
 	    //option 3: the beast slays you
-	    else if ( !pat.isAlive() ) {
+	    else if ( !((Warrior) pat).isAlive() ) {
         System.out.println( "Ye olde self hath expired. You got dead." );
         return false;
 	    }
