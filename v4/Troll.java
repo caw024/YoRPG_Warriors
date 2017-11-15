@@ -4,13 +4,13 @@
 //2017-11-13
 
 /*
-public class Troll extends Monster {
+  public class Troll extends Monster {
 
-    //Constructor
-    public Troll() {
-	strength = 20;
-    }
-}
+  //Constructor
+  public Troll() {
+  strength = 20;
+  }
+  }
 */public class Troll extends Monster{
 
     //Attributes
@@ -25,21 +25,9 @@ public class Troll extends Monster {
     public Troll() {
 	name = "Troll";
 	life = 150;
-	strength = (int) (Math.random() * 10) + 20 ;
-	defense = 15;
-	aRate = 1;
-    }
-
-    //returns boolean indicating living/dead
-    public boolean isAlive() {
-	if (life <= 0)
-	    return false;
-	return true;
-    }
-
-    //returns defense attribute
-    public int getDefense() {
-	return defense;
+	strength = 5;
+	defense = 5;
+	aRate = 2.5;
     }
 
     //returns name attribute
@@ -47,28 +35,8 @@ public class Troll extends Monster {
 	return name;
     }
 
-    //decreases life by parameter
-    public int lowerHP(int n) {
-	return life -= n;
-    }
-
-    //calculates attack
-    public int attack(Protagonist prot) {
-    	int damage; 
-    	if (aRate < 0) 
-    		damage = 0;
-    	else 
-    		damage = (int) (strength * aRate) - prot.getDefense();
-    	prot.lowerHP(damage);
-    	return damage;
-    }
-
-    /*
     public String about() {
-	String abt = "";
-	abt += "This monster is a Troll with " + life + " HP, " + aRate + "attack rate, and " + defense + " defense.";
-	return abt;
-    }
-    */
+	return "This monster is a Troll with " + life + " HP, " + aRate + "attack rate, and " + defense + " defense.";
 
+    }
 }
