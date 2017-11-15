@@ -1,4 +1,4 @@
-# YoRPG_Warriors
+# YoRPG_Warriors: Calvin Aw and Ying Xin Jiang
 I guess I just post this here?
 
 
