@@ -16,3 +16,4 @@ Classes:
       Troll
       Golem
     
+Each class has subclasses as shown above. Each subclass has methods, which define its unique characteristics.
