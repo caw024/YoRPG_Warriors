@@ -3,7 +3,7 @@
 //HW#28 -- Ye Olde Role Playing Game
 //2017-11-8
 
-public class Protagonist extends Character{
+public abstract class Protagonist extends Character{
 
     //Attributes
     protected String name;
@@ -49,18 +49,11 @@ public class Protagonist extends Character{
     }
 
     //prepares Protagonist for special attack
-    public void specialize() {
-	aRate += 2.5;
-	if (defense <= 0)
-	    defense = 0;
-	else
-	    defense -= 1;
-    }
+    public abstract void specialize();
 
     //prepares Protagonist for normal attack
-    public void normalize() {
-	aRate = 2.5;
-	defense = 5;
-    }
+    public abstract void normalize();
+
+public abstract String about();
 
 }
