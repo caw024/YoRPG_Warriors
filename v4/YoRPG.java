@@ -47,8 +47,8 @@ public class YoRPG
     pre:  
     post: according to user input, modifies instance var for difficulty 
     and instantiates a Protagonist
-    =============================================*/ 
- public void newGame()
+    =============================================*/
+  public void newGame()
   {
     String s;
     String name = "";
@@ -80,19 +80,18 @@ public class YoRPG
     try {
 	System.out.println( "\nWhat are you?" );
 	System.out.println( "\t1: Warrior" );
-	System.out.println( "\t2: Wizard" );
-	System.out.println( "\t3: Archer" );
-	System.out.println( "\t4: Description");
+System.out.println("\t2: Wizard");
+System.out.println("\t3: Archer");
 	i = Integer.parseInt( in.readLine() );
     }
     catch ( IOException e ) { }
 
     if (i == 1)
 	 pat = new Warrior(name);
-    if (i == 2)
-	pat = new Wizard (name);
-    if (i == 3)
-	pat = new Archer (name);
+if (i == 2)
+pat = new Wizard(name);
+if (1 == 3)
+pat = new Archer(name);
     
 
   }//end newGame()
@@ -112,21 +111,12 @@ public class YoRPG
     if ( Math.random() >= ( difficulty / 3.0 ) )
 	    System.out.println( "\nNothing to see here. Move along!" );
     else {
-	int rand = (int) (Math.random() * 3);
-	
-	if ( rand == 0 )
-	    smaug = new Zombie();
-	if ( rand == 1)
-	    smaug = new Troll();
-	if ( rand == 2)
-	    smaug = new Golem();
-	   
-	   
-	System.out.println( "\nLo, yonder monster approacheth!" );
-	System.out.println( "On thy path is a " + smaug.getName() );
+	    System.out.println( "\nLo, yonder monster approacheth!" );
 
-	   
-	while( smaug.isAlive() && pat.isAlive() ) {
+	    if ( (int) (Math.random() * 3) < 3){
+		smaug = new Zombie();
+	    }
+	    while( smaug.isAlive() && pat.isAlive() ) {
 
         // Give user the option of using a special attack:
         // If you land a hit, you incur greater damage,

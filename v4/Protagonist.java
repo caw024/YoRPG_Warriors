@@ -54,8 +54,6 @@ public abstract class Protagonist extends Character{
     //prepares Protagonist for normal attack
     public abstract void normalize();
 
-    public abstract void about();
-	
-    
+public abstract String about();
 
 }

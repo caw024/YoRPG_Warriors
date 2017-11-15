@@ -24,7 +24,7 @@ public class Zombie extends Monster{
 
     //returns boolean indicating living/dead
     public boolean isAlive() {
-	if (life <= 0)
+	if (life == 0)
 	    return false;
 	return true;
     }
@@ -54,13 +54,5 @@ public class Zombie extends Monster{
     	prot.lowerHP(damage);
     	return damage;
     }
-    /*
-     public static String about() {
-	String abt = "";
-	abt += "This monster is a Zombie with " + life + " HP, " + aRate + "attack rate, and " + defense + " defense.";
-	return abt;
-    }
-    */
-
 
 }
