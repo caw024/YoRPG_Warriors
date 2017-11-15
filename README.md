@@ -8,12 +8,13 @@ Driver:
 Classes:
   Character
     Protagonist
-      Warrior
-      Wizard
-      Archer
+    1. Warrior: 4x the strength
+    2. Wizard: 4x the defense
+    3. Archer: 2x the attack rate 
     Monster
-      Zombie
-      Troll
-      Golem
+    1. Zombie
+    2. Troll
+    3. Golem
     
 Each class has subclasses as shown above. Each subclass has methods, which define its unique characteristics.
+
