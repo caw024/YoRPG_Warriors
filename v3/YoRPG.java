@@ -80,12 +80,18 @@ public class YoRPG
     try {
 	System.out.println( "\nWhat are you?" );
 	System.out.println( "\t1: Warrior" );
+System.out.println("\t2: Wizard");
+System.out.println("\t3: Archer");
 	i = Integer.parseInt( in.readLine() );
     }
     catch ( IOException e ) { }
 
     if (i == 1)
 	 pat = new Warrior(name);
+if (i == 2)
+pat = new Wizard(name);
+if (1 == 3)
+pat = new Archer(name);
     
 
   }//end newGame()
