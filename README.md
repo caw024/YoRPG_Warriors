@@ -1,7 +1,4 @@
 # YoRPG_Warriors: Calvin Aw and Ying Xin Jiang
-I guess I just post this here?
-
-
 Driver:
   YoRPG
   
@@ -18,3 +15,4 @@ Classes:
     
 Each class has subclasses as shown above. Each subclass has methods, which define its unique characteristics.
 
+You select your difficulty, your protagonist type and enter your name. Along the way, you will encounter different monsters and can chose whether to attack normally, flee, intimidate, or do a special attack. 
