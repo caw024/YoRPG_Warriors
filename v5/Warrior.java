@@ -26,5 +26,9 @@ public class Warrior extends Protagonist {
 	    defense = 0;
 	else
 	    defense -= 1;
+<<<<<<< HEAD
+=======
+
+>>>>>>> b22656d350b9087ed38a0ca2a5a6a0ceb6487d61
     }
 }
