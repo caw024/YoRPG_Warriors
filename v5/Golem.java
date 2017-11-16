@@ -15,7 +15,7 @@ public class Golem extends Monster{
     //Constructor
     public Golem() {
 	name = "Golem";
-	life = 150;
+	life = 100;
 	strength = 5;
 	defense = 20;
 	aRate = 2.5;

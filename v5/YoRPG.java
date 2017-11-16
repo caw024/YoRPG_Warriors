@@ -61,16 +61,11 @@ public class YoRPG
 	s += "\t3: Beowulf hath nothing on me. Bring it on.\n";
 	s += "Selection: ";
 	System.out.print( s );
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> b22656d350b9087ed38a0ca2a5a6a0ceb6487d61
 	try {
 	    difficulty = Integer.parseInt( in.readLine() );
 	}
 	catch ( IOException e ) { }
-
 
 	s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
 	System.out.print( s );
@@ -94,11 +89,7 @@ public class YoRPG
 	    pat = new Warrior(name);
 	if (i == 2)
 	    pat = new Wizard(name);
-<<<<<<< HEAD
-	if (1 == 3)
-=======
-	if (i == 3)
->>>>>>> b22656d350b9087ed38a0ca2a5a6a0ceb6487d61
+		if (i == 3)
 	    pat = new Archer(name);
     
 
@@ -114,13 +105,10 @@ public class YoRPG
     public boolean playTurn()
     {
 	int i = 1;
-<<<<<<< HEAD
 	int d1, d2;
-=======
 	int d1 = 0;
 	int d2 = 0;
 	boolean flee = true;
->>>>>>> b22656d350b9087ed38a0ca2a5a6a0ceb6487d61
 
 	if ( Math.random() >= ( difficulty / 3.0 ) )
 	    System.out.println( "\nNothing to see here. Move along!" );
@@ -130,17 +118,15 @@ public class YoRPG
 	    if ( (int) (Math.random() * 3) < 3){
 		smaug = new Zombie();
 	    }
-<<<<<<< HEAD
-	    while( smaug.isAlive() && pat.isAlive() ) {
-=======
+
 	    while((smaug.isAlive() && flee) && pat.isAlive() ) {
->>>>>>> b22656d350b9087ed38a0ca2a5a6a0ceb6487d61
+
 
 		// Give user the option of using a special attack:
 		// If you land a hit, you incur greater damage,
 		// ...but if you get hit, you take more damage.
 		try {
-<<<<<<< HEAD
+
 		    System.out.println( "\nDo you feel lucky?" );
 		    System.out.println( "\t1: Nay.\n\t2: Aye!" );
 		    i = Integer.parseInt( in.readLine() );
@@ -155,12 +141,11 @@ public class YoRPG
 		d1 = pat.attack( smaug );
 		d2 = smaug.attack( pat );
 
-=======
+
 		    System.out.println( "\nHow to deal with Monster:" );
 		    System.out.println( "\t1: Special\n\t2: Normal\n\t3: Flee (1/4)\n\t4. Intimidate (1/3)" );
 		    i = Integer.parseInt( in.readLine() );
 		}
-		catch ( IOException e ) { }
 		
 		if ( i == 1 ){
 		    pat.specialize();
@@ -202,9 +187,6 @@ public class YoRPG
 		    }
 		}
 		    
-
-	
->>>>>>> b22656d350b9087ed38a0ca2a5a6a0ceb6487d61
 		System.out.println( "\n" + pat.getName() + " dealt " + d1 +
 				    " points of damage.");
 
@@ -231,8 +213,6 @@ public class YoRPG
 		return false;
 	    }
 	}//end else
-
-	return true;
     }//end playTurn()
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
