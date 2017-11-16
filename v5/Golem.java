@@ -12,18 +12,10 @@ public class Golem extends Monster{
     protected int defense;
     protected double aRate;
 
-<<<<<<< HEAD
-    //Constructor
-    public Golem() {
-	name = "Golem";
-	life = 100;
-=======
-
     //Constructor
     public Golem() {
 	name = "Golem";
 	life = 150;
->>>>>>> b22656d350b9087ed38a0ca2a5a6a0ceb6487d61
 	strength = 5;
 	defense = 20;
 	aRate = 2.5;
